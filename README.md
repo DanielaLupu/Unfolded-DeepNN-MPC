@@ -24,11 +24,12 @@ $$               u_t \in \mathbb{U}  \forall t=0:N-1,  x_0 \text{given}$$
 $$               x_t \in \mathbb{X}  \forall t=1:N,$$
 
 where we denoted the length of the prediction horizon with $N$.
-This problem can be reformulated as a quadratic programming problem.
+This problem can be reformulated as a quadratic programming (QP) problem. See in Bibliography paper 1 or 2 for the formulation.
 
 ## Guide to run the application
 Run the code
-python app.py
+
+    python app.py
 
 Requirements to run the application:
 
@@ -37,4 +38,25 @@ scipy
 PIL
 matplotlib
 tkinter
+
+## Steps to use the application as exe
+This application, generates data for training the unfolded deep network. Once the network is trained, one can generate fast MPC laws with the Neural Networks.
+<img width="280" alt="image" src="https://github.com/user-attachments/assets/f86c237a-9685-4f98-85e5-c450cbbebff5">
+
+Step 1: Generate data for training the network. See MPC formulation section for the inputs the user needs to provide.
+If there are no constrains on the state, the QP problem is solved by using first order optimization algorithm, i.e the accelerated gradient projection algorithm (see paper 1 in Bibliography). If the user checks the checkbox for state constrains we employ a primal dual optimization algorithm , named PD3O (see paper 2 in Bibliography).
+<img width="295" alt="image" src="https://github.com/user-attachments/assets/c342e819-6e77-4bdb-8806-b6433ef4a678">
+
+Step 2: Train the network. The Neural Network architecture is inspired by the optimization algorithm used in step 1.
+
+Step 3: Give a initial state of the system and a simulation horizont. A figure with the inputs and states bahaviour will be produced.
+
+We provide for testing the CIGRE 
+## Bibliography
+1. D. Lupu, I. Necoara, Exact representation and efficient approximations of linear model predictive control laws via HardTanh type deep neural networks, Systems and Control Letters (Q1), 186, doi: 10.1016/j.sysconle.2024.105742, 2024.
+2. D. Lupu, I. Necoara, L. Toma, Deep unfolding primal-dual architectures: application to linear model predictive control, submitted to European Control Conference, Greece, 2025.
+   
+## Authors
+Daniela Lupu & Ion Necoara
+
 
