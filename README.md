@@ -4,9 +4,9 @@ This repo contains a unfolded deep neural network methods for solving the linear
 ## MPC problem formulation
 
 Let us consider  the  following discrete-time linear system:
-\begin{equation} \label{eq:sysD}
+$$
     x_{t+1} = Ax_t + B u_t,
-\end{equation}
+$$
 where $x_t \in \mathbb{R}^{n_x}$ denotes the state at time $t$ and $u_t \in \mathbb{R}^{n_u}$ is the associated control input. We consider input and state constraints: $u_t \in \mathbb{U}$  and $x_t \in \mathbb{X}$ for all $t\geq 0$, where $\mathbb{U} \subseteq  \mathbb{R}^{n_u}$ and $\mathbb{X} \subseteq  \mathbb{R}^{n_x}$ are given  polyhedral sets. More precisely, for practical reasons in this paper we consider box type  constraints on the states and inputs, i.e.: 
 $$\mathbb{U} =[\underline{u}, \overline{u}] \quad  \text{and} \quad   \mathbb{X}=[\underline{x}, \overline{x}].$$  For the aforementioned system \eqref{eq:sysD}, we assume convex quadratic stage and final costs of the form:
 \[ 
