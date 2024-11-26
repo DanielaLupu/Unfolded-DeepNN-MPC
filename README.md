@@ -22,3 +22,19 @@ $$ \min_{x_t, u_t} \sum_{t=0}^{N-1} \ell\left(x_t, u_t\right) + \ell_f\left(x_N\
 $$\text{s.t.:}  \quad x_{t+1}=A x_t+B u_t,$$
 $$               u_t \in \mathbb{U}  \forall t=0:N-1,  x_0 \text{given}$$
 $$               x_t \in \mathbb{X}  \forall t=1:N,$$
+
+where we denoted the length of the prediction horizon with $N$.
+This problem can be reformulated as a quadratic programming problem.
+
+## Guide to run the application
+Run the code
+python app.py
+
+Requirements to run the application:
+
+numpy
+scipy
+PIL
+matplotlib
+tkinter
+
