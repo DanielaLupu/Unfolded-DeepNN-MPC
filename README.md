@@ -33,28 +33,32 @@ Run the code
 
 Requirements to run the application:
 
-numpy
-scipy
-PIL
-matplotlib
-tkinter
+    numpy
+    scipy
+    PIL
+    matplotlib
+    tkinter
 
 ## Steps to use the application as exe
 This application, generates data for training the unfolded deep network. Once the network is trained, one can generate fast MPC laws with the Neural Networks.
+
 <img width="280" alt="image" src="https://github.com/user-attachments/assets/f86c237a-9685-4f98-85e5-c450cbbebff5">
 
 Step 1: Generate data for training the network. See MPC formulation section for the inputs the user needs to provide.
 If there are no constrains on the state, the QP problem is solved by using first order optimization algorithm, i.e the accelerated gradient projection algorithm (see paper 1 in Bibliography). If the user checks the checkbox for state constrains we employ a primal dual optimization algorithm , named PD3O (see paper 2 in Bibliography).
+
 <img width="295" alt="image" src="https://github.com/user-attachments/assets/c342e819-6e77-4bdb-8806-b6433ef4a678">
 
 Step 2: Train the network. The Neural Network architecture is inspired by the optimization algorithm used in step 1.
 
 Step 3: Give a initial state of the system and a simulation horizont. A figure with the inputs and states bahaviour will be produced.
 
-We provide for testing the CIGRE 
+We provide for testing the CIGRE system (see paper 3 in Bibliography for the model).
+
 ## Bibliography
-1. D. Lupu, I. Necoara, Exact representation and efficient approximations of linear model predictive control laws via HardTanh type deep neural networks, Systems and Control Letters (Q1), 186, doi: 10.1016/j.sysconle.2024.105742, 2024.
-2. D. Lupu, I. Necoara, L. Toma, Deep unfolding primal-dual architectures: application to linear model predictive control, submitted to European Control Conference, Greece, 2025.
+1. D. Lupu, I. Necoara, "Exact representation and efficient approximations of linear model predictive control laws via HardTanh type deep neural networks", Systems and Control Letters (Q1), 186, doi: 10.1016/j.sysconle.2024.105742, 2024.
+2. D. Lupu, I. Necoara, L. Toma, "Deep unfolding primal-dual architectures: application to linear model predictive control", submitted to European Control Conference, Greece, 2025.
+3. R. M. Hermans, M. Lazar and A. Jokić, "Distributed predictive control of the 7-machine CIGRÉ power system," Proceedings of the 2011 American Control Conference, San Francisco, CA, USA, 2011, pp. 5225-5230, doi: 10.1109/ACC.2011.5991135.
    
 ## Authors
 Daniela Lupu & Ion Necoara
